@@ -1,0 +1,21 @@
+package com.vinod.didemo.services;
+
+import com.vinod.didemo.repository.GreetingRepository;
+
+/*@Service
+@Primary
+@Profile({"en","default"})*/
+public class PrimaryGreetingService implements GreetingService
+{
+
+    private GreetingRepository greetingRepository;
+
+    public PrimaryGreetingService(GreetingRepository greetingRepository) {
+        this.greetingRepository = greetingRepository;
+    }
+
+    @Override
+    public String sayGreeting() {
+        return greetingRepository.getEnglishGreeting();
+    }
+}
