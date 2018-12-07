@@ -1,6 +1,7 @@
 package com.vinod.didemo;
 
 import com.vinod.didemo.examplebeans.FakeDataSource;
+import com.vinod.didemo.examplebeans.FakeJMSBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -20,5 +21,8 @@ public class DiDemoApplication {
 
         FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
         System.out.println(fakeDataSource);
+
+        FakeJMSBroker fakeJMSBroker = ctx.getBean(FakeJMSBroker.class);
+        System.out.println(fakeJMSBroker);
     }
 }
